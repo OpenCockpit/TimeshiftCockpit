@@ -32,7 +32,7 @@ class CockpitPlayerSummary(ScreenSummary):
 
     def __init__(self, session, parent):
         ScreenSummary.__init__(self, session, parent=parent)
-        self.skinName = ["TimeshiftCockpitPlayerSummary", "ScreenSummary"]
+        self.skinName = ["CockpitPlayerSummary", "ScreenSummary"]
 
 
 class CockpitPlayer(
@@ -77,7 +77,7 @@ class CockpitPlayer(
         # sticks - this is why skin lookup was falling back to an
         # undefined embedded skin ("<embedded-in-CockpitPlayer>",
         # position=(?, ?)) instead of resolving TimeshiftCockpitPlayer.
-        self.skinName = "TimeshiftCockpitPlayer"
+        self.skinName = "CockpitPlayer"
 
         self._event_tracker = ServiceEventTracker(
             screen=self,

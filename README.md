@@ -16,7 +16,6 @@ TimeshiftCockpit is a plugin for Open Enigma2 receivers that provides advanced t
 - record every timeshift event (pressing the REC key)
 
 ## Usage
-
 - PLAY/PAUSE to start on demand timeshift or playback of permanent timeshift
 - On demand timeshift: STOP to exit timeshift playback and stop timeshift recording
 - Permanent timeshift: STOP/EXIT to exit timeshift playback but continue with timeshift recording
@@ -30,17 +29,10 @@ TimeshiftCockpit is a plugin for Open Enigma2 receivers that provides advanced t
 - BLUE shows a list of active timeshifts
 
 ## Conflicts
-
 - TSC may conflict with other permanent timeshift plugins, so remove those before installing TimeshiftCockpit
-
-## Disclaimer
-The project author is not responsible for how this software is used by others. It is not intended to be used for accessing or distributing copyrighted materials without authorization.
-Users are solely responsible for determining the legality of their actions.
-
-This repository has no control over the streams, links, or the legality of the content provided by the different hosts (including all mirror sites). It is the end user's responsibility to ensure the legal use of these streams, and we strongly recommend verifying that the content complies with all applicable laws, including copyright laws and regulations of your country's jurisdiction before use.
 
 ## Limitations
 - Tested on OpenViX and OpenATV with DM900.
 
 ## Links
-- Installation: https://xcentaurix.github.io/TimeshiftCockpit
+- Installation: https://OpenCockpit.github.io/TimeshiftCockpit

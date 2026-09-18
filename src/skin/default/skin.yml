@@ -5,9 +5,9 @@ skin:
     - xmlinc:
         file: "screen_TimeshiftOverview.ymlinc"
     - xmlinc:
-        file: "screen_TimeshiftCockpitPlayer.ymlinc"
+        file: "screen_CockpitPlayer.ymlinc"
     - xmlinc:
-        file: "screen_TimeshiftCockpitPlayerSummary.ymlinc"
+        file: "screen_CockpitPlayerSummary.ymlinc"
     - xmlinc:
         file: "screen_ScreenPVRState.ymlinc"
     - xmlinc:
