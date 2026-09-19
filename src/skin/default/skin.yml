@@ -6,6 +6,7 @@ skin:
         file: "screen_TimeshiftOverview.ymlinc"
     - xmlinc:
         file: "screen_CockpitPlayer.ymlinc"
+        imagepath: "/usr/lib/enigma2/python/Plugins/SystemPlugins/ComponentsCockpit/skin/images"
     - xmlinc:
         file: "screen_CockpitPlayerSummary.ymlinc"
     - xmlinc:
