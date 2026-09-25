@@ -31,5 +31,5 @@ class EventChoiceBox():
             ChoiceBox,
             list=alist,
             keys=[],
-            title=_("Select Event")
+            title=_title
         )
