@@ -6,6 +6,7 @@ import os
 from time import time
 from Components.ActionMap import HelpableActionMap
 from Components.config import config
+from Components.Pixmap import Pixmap
 from Components.ServiceEventTracker import ServiceEventTracker, InfoBarBase
 from Components.Sources.COCCurrentService import COCCurrentService
 from Screens.Screen import Screen, ScreenSummary
@@ -13,6 +14,7 @@ from Screens.HelpMenu import HelpableScreen
 from Screens.InfoBarGenerics import InfoBarAudioSelection, InfoBarShowHide, InfoBarNotifications
 from Screens.MessageBox import MessageBox
 from ServiceReference import ServiceReference
+from Tools.LoadPixmap import LoadPixmap
 from enigma import iPlayableService
 from .__init__ import _
 from .Debug import logger
@@ -26,6 +28,7 @@ from .DelayTimer import DelayTimer
 from .TimeshiftUtils import manageTimeshiftRecordings
 from .TimeshiftOverview import TimeshiftOverview
 from .CutListUtils import secondsToPts
+from .SkinUtils import getSkinPath
 
 
 class CockpitPlayerSummary(ScreenSummary):
@@ -59,6 +62,7 @@ class CockpitPlayer(
         EventChoiceBox.__init__(self)
 
         self["Service"] = COCCurrentService(session.nav, self)
+        self["player_icon"] = Pixmap()
 
         event_start = True
         self.service_started = False
@@ -174,6 +178,14 @@ class CockpitPlayer(
 
     def __onShown(self):
         logger.info("...")
+        player_icon = "player.svg"
+        # Explicit width/height/scaletoFit are required to rasterize an SVG
+        # to a usable size - see CockpitPVRState.py's identical pattern for
+        # its own state icons ("Load SVG with proper scaling to fit the
+        # widget"). Without them LoadPixmap() has no target size for a
+        # vector image, and setPixmap() ends up with nothing visible.
+        self["player_icon"].instance.setPixmap(LoadPixmap(getSkinPath(
+            "images/" + player_icon), cached=True, width=60, height=60, scaletoFit=1))
         if not os.path.exists(config.usage.timeshift_path.value):
             self.session.open(MessageBox, _("Timeshift directory does not exist")
                               + ": " + config.usage.timeshift_path.value, MessageBox.TYPE_ERROR)
@@ -220,5 +232,15 @@ class CockpitPlayer(
         logger.info("playing: %s, self.execing: %s", playing, self.execing)
         # self.pvr_state_dialog.hide()
         self.showPVRStatePic(False)
-        self.doSeekRelative(-secondsToPts(5))
-        self.setSeekState(self.SEEK_STATE_PLAY)
+        # Only recover-and-resume if playback was actually running when EOF
+        # hit (same gating CockpitStreamingPlayer.py's doEofInternal() already
+        # uses) - a timeshift file is still actively growing, so hitting EOF
+        # right at the very start (position 0, moments after the recording
+        # began) is expected and harmless while paused, not a real playback
+        # error. Forcing SEEK_STATE_PLAY unconditionally here undid the
+        # deliberate pause __serviceStarted() had just set moments earlier
+        # (pressing pause to start a timeshift), leaving playback running
+        # instead of frozen on the live frame.
+        if playing:
+            self.doSeekRelative(-secondsToPts(5))
+            self.setSeekState(self.SEEK_STATE_PLAY)

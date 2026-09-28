@@ -52,9 +52,9 @@ screen:
           - convert:
               type: "COCServicePosition"
               text: "Remaining"
-    - ePixmap:
+    - widget:
+        alphatest: "blend"
         name: "player_icon"
-        pixmap: "~/../images/player.svg"
         position: "30,900"
         size: "60,60"
         zPosition: "2"

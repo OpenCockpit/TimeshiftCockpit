@@ -66,7 +66,7 @@
 		<widget font="Regular;34" halign="left" position="735,1010" render="Label" size="225,45" source="Service" transparent="1" valign="center">
 			<convert type="COCServicePosition">Remaining</convert>
 		</widget>
-		<ePixmap name="player_icon" pixmap="~/../images/player.svg" position="30,900" size="60,60" zPosition="2"/>
+		<widget alphatest="blend" name="player_icon" position="30,900" size="60,60" zPosition="2"/>
 		<widget font="Regular;42" noWrap="1" position="105,900" render="Label" size="1650,60" source="Service" transparent="1" valign="center">
 			<convert type="COCEventName">Name</convert>
 		</widget>
@@ -112,12 +112,5 @@
 	<screen backgroundColor="transparent" flags="wfNoBorder" name="ScreenPVRState" position="center,center" resolution="1920,1080" size="100,160" zPosition="1000">
 		<widget alphatest="blend" name="state_pic" position="0,0" size="100,100"/>
 		<widget font="Regular;38" halign="center" name="state" position="0,110" size="100,54" transparent="1" valign="center"/>
-	</screen>
-	<screen backgroundColor="transparent" flags="wfNoBorder" name="BufferingProgress" position="center,center" resolution="1920,1080" size="100,100">
-		<widget alphatest="off" name="pic" position="center,center" size="100,100" transparent="0"/>
-	</screen>
-	<screen name="BufferingProgressSummary" position="fill" resolution="396,240">
-		<ePixmap pixmap="~/../images/display_bg.png" position="0,0" size="400,240" zPosition="-1"/>
-		<widget name="lcd_pic" position="150,70" size="100,100" transparent="1"/>
 	</screen>
 </skin>

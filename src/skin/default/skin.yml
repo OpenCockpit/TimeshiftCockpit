@@ -11,7 +11,3 @@ skin:
         file: "screen_CockpitPlayerSummary.ymlinc"
     - xmlinc:
         file: "screen_ScreenPVRState.ymlinc"
-    - xmlinc:
-        file: "screen_BufferingProgress.ymlinc"
-    - xmlinc:
-        file: "screen_BufferingProgressSummary.ymlinc"

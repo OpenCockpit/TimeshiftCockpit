@@ -63,6 +63,12 @@ class SetupScreen(Setup, ChannelSelection):
             self._finishSave(permanent_changed, fixed_changed, False)
 
     def _finishSave(self, permanent_changed, fixed_changed, restart_answer):
+        # Same reasoning as keySave()'s own comment above: this has to open
+        # before Setup.keySave() below, which closes this screen - a screen
+        # can only open a new modal dialog while it's still the session's
+        # active one.
+        if restart_answer:
+            self.session.open(TryQuitMainloop, retvalue=QUIT_RESTART)
         Setup.keySave(self)
         if permanent_changed:
             if config.plugins.timeshiftcockpit.permanent.value:
@@ -72,5 +78,3 @@ class SetupScreen(Setup, ChannelSelection):
         elif fixed_changed:
             stopTimeshift()
             startTimeshift()
-        if restart_answer:
-            self.session.open(TryQuitMainloop, retvalue=QUIT_RESTART)

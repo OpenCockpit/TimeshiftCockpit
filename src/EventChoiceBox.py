@@ -5,7 +5,6 @@
 from time import time, strftime, localtime
 from Screens.InfoBar import InfoBar
 from Screens.ChoiceBox import ChoiceBox
-from .__init__ import _
 from .Debug import logger
 
 
