@@ -6,11 +6,12 @@ screen:
     - xmlinc:
         file: "screenpart_TitleBar.ymlinc"
     - widget:
+        backgroundColorSelected: "$backgroundColorSelected"
         enableWrapAround: "1"
-        position: "20,65"
+        position: "20,75"
         render: "Listbox"
         scrollbarMode: "showNever"
-        size: "e-40,e-140"
+        size: "$screen_width-40,($screen_height-2*55-40)/70*70"
         source: "list"
         transparent: "1"
         children:

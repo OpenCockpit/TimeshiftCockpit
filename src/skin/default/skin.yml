@@ -3,6 +3,8 @@ skin:
     - xmlinc:
         file: "screenpart_globals.ymlinc"
     - xmlinc:
+        file: "display_globals.ymlinc"
+    - xmlinc:
         file: "screen_TimeshiftOverview.ymlinc"
     - xmlinc:
         file: "screen_CockpitPlayer.ymlinc"

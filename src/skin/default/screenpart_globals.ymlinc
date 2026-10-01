@@ -4,3 +4,16 @@
     file: "screenpart_fonts.ymlinc"
 - xmlinc:
     file: "screenpart_defaults.ymlinc"
+
+# symbolic colors
+- global:
+    name: "backgroundColorSelected"
+    value: "blue"
+
+# screen sizes
+- global:
+    name: "title_height"
+    value: "55"
+- global:
+    name: "footer_height"
+    value: "55"
