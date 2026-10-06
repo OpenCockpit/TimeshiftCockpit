@@ -169,21 +169,3 @@ msgstr "Error de escritura durante la grabación. ¿Disco lleno?"
 
 msgid "Open setup"
 msgstr "Abrir configuración"
-
-msgid "Cover source"
-msgstr ""
-
-msgid "Fixed timeshift service #1"
-msgstr ""
-
-msgid "Fixed timeshift service #2"
-msgstr ""
-
-msgid "Infobar/Play"
-msgstr ""
-
-msgid "Play/Pause"
-msgstr ""
-
-msgid "automatic"
-msgstr ""

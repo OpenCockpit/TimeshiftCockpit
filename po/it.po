@@ -21,152 +21,177 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ChannelSelection.py:41
 msgid "Select bouquet"
 msgstr "Selezionare bouquet"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ChannelSelection.py:61
 msgid "Select channel"
 msgstr "Selezionare canale"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPVRState.py:70
 msgid "End"
 msgstr "Fine"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPlayer.py:89
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPlayer.py:90
 msgid "Stop timeshift"
 msgstr "Stop timeshift"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPlayer.py:91
 msgid "Power off"
 msgstr "Spegnere"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPlayer.py:92
 msgid "Movie info"
 msgstr "Info video"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPlayer.py:93
 msgid "Next event"
 msgstr "Evento successivo"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPlayer.py:94
 msgid "Previous event"
 msgstr "Evento precedente"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPlayer.py:95
 msgid "Show Events"
 msgstr "Mostrare eventi"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPlayer.py:100
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPlayer.py:101
 msgid "Open service list"
 msgstr "Aprire elenco canali"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitPlayer.py:147
 msgid "Timeshift directory does not exist"
 msgstr "Directory Timeshift non presente"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitSmartSeek.py:45
 msgid "Skip forward"
 msgstr "Skip avanti"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/CockpitSmartSeek.py:46
 msgid "Skip backward"
 msgstr "Skip indietro"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigInit.py:35
 msgid "Inactive"
 msgstr "Nessuno"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:70
 msgid "Cancel"
 msgstr "Annullare"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:71
 msgid "Save"
 msgstr "Salvare"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:72
 msgid "Defaults"
 msgstr "Default"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:89
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/plugin.py:64
 msgid "Setup"
 msgstr "Impostazioni"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:132
 msgid "Really close without saving settings?"
 msgstr "Chiudere senza salvare le impostazioni?"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:180
 msgid "Loading default settings will overwrite all settings, really load them?"
 msgstr "Le impostazioni predefinite sovrascriveranno quelle presenti. Eseguire?"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:253
 msgid "Some changes require a GUI restart"
 msgstr "Alcune modifiche richiedono il riavvio della GUI"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:253
 msgid "Restart GUI now?"
 msgstr "Riavviare la GUI ora?"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:277
 msgid "Bookmarks"
 msgstr "Segnalibri"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:278
 msgid "Select directory"
 msgstr "Selezionare directory"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreen.py:294
 msgid "Path does not exist"
 msgstr "Percorso non presente"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:35
 msgid "Reset"
 msgstr "Reset"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:54
 msgid "GENERAL"
 msgstr "GENERALE"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:55
 msgid "Enable plugin"
 msgstr "Abilitare plugin"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:55
 msgid "Select whether to enable or disable the plugin."
 msgstr "Determinare se abilitare/disabilitare il plugin."
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:56
 msgid "Permanent timeshift"
 msgstr "Permanent timeshift"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:56
 msgid "Select to enable permanent timeshift."
 msgstr "Abilitare Permanent Timeshift."
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:57
 msgid "Fixed timeshift service #1"
 msgstr "Timeshift: canale fisso #1"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:57
 msgid "Press OK to select service for fixed timeshift #1."
 msgstr "Premere OK per selezionare il canale timeshift fisso #1."
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:58
 msgid "Fixed timeshift service #2"
 msgstr "Timeshift: canale fisso #2"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:58
 msgid "Press OK to select service for fixed timeshift #2."
 msgstr "Premere OK per selezionare il canale timeshift fisso #2."
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:59
 msgid "DEBUG"
 msgstr "DEBUG"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:60
 msgid "Log level"
 msgstr "Livello log"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/ConfigScreenInit.py:60
 msgid "Select debug log level."
 msgstr "Selezionare livello log di debug."
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/Events.py:53
 msgid "Events"
 msgstr "Eventi"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/Events.py:55
 msgid "Select"
 msgstr "Selezionare"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/MovieInfoEPG.py:42
 msgid "min"
 msgstr "min"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/Recording.py:65
 msgid "Write error while recording. Disk full?"
 msgstr "Errore scrittura in registrazione. Disco pieno?"
 
+#: lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/plugin.py:65
 msgid "Open setup"
 msgstr "Impostazioni"
-
-msgid "Cover source"
-msgstr ""
-
-msgid "Infobar/Play"
-msgstr ""
-
-msgid "Play/Pause"
-msgstr ""
-
-msgid "Stop playback"
-msgstr ""
-
-msgid "EPG Info"
-msgstr ""
-
-msgid "Do you want to resume playback at position: %d:%02d:%02d?"
-msgstr ""
-
-msgid "automatic"
-msgstr ""

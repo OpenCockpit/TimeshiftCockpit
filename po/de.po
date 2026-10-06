@@ -19,102 +19,137 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: ChannelSelection.py:23
 msgid "Select bouquet"
 msgstr "Bouquet-Auswahl"
 
+#: ChannelSelection.py:45
 msgid "Select channel"
 msgstr "Kanal-Auswahl"
 
+#: CockpitPlayer.py:80 CockpitPlayer.py:81
 msgid "Stop timeshift"
 msgstr "Beende Timeshift"
 
+#: CockpitPlayer.py:82
 msgid "Power off"
 msgstr "Ausschalten"
 
+#: CockpitPlayer.py:83
 msgid "Movie info"
 msgstr "Video-Informationen"
 
+#: CockpitPlayer.py:84
 msgid "Next event"
 msgstr "Nächste Sendung"
 
+#: CockpitPlayer.py:85
 msgid "Previous event"
 msgstr "Vorherige Sendung"
 
+#: CockpitPlayer.py:86
 msgid "Show events"
 msgstr "Sendungsauswahl"
 
+#: CockpitPlayer.py:87
 msgid "Record timeshift Event"
 msgstr "Aufnahme einer Timeshift-Sendung"
 
+#: CockpitPlayer.py:88
 msgid "Show active timeshifts"
 msgstr "Aktive Timeshift Kanäle anzeigen"
 
+#: CockpitPlayer.py:89
 msgid "Manage timeshift recordings"
 msgstr "Timeshift-Aufnahmen verwalten"
 
+#: CockpitPlayer.py:93 CockpitPlayer.py:94
 msgid "Open service list"
 msgstr "Öffne Senderliste"
 
+#: CockpitPlayer.py:137
 msgid "Select a timeshift event for playback"
 msgstr "Auswahl einer Timeshift-Sendung für Playback"
 
+#: CockpitPlayer.py:150
 msgid "Select a timeshift event for recording"
 msgstr "Auswahl einer Timeshift-Sendung für Aufnahme"
 
+#: CockpitPlayer.py:160
 msgid "Recording timeshift event now"
 msgstr "Timeshift-Sendung wird aufgenommen"
 
+#: CockpitPlayer.py:168
 msgid "Timeshift directory does not exist"
 msgstr "Timeshift-Verzeichnis existiert nicht"
 
+#: ConfigInit.py:25
 msgid "Inactive"
 msgstr "Inaktiv"
 
+#: EventChoiceBox.py:34
 msgid "Select Event"
 msgstr "Sendungsauswahl"
 
+#: InfoBar.py:83
 msgid "No timeshift available for playback"
 msgstr "Timeshift ist auf diesem Kanal nicht verfügbar"
 
+#: MovieInfoEPG.py:26
 msgid "min"
 msgstr "Min"
 
+#: SetupScreen.py:22 plugin.py:47
 msgid "Setup"
 msgstr "Einstellungen"
 
+#: SetupScreen.py:63
+#, python-format
 msgid "TimeshiftCockpit has been %s. Restart Enigma2 now for this to take effect?"
 msgstr "TimeshiftCockpit wurde %s. Soll Enigma2 neu gestartet werden, um dies aufzuführen?"
 
+#: SetupScreen.py:64
 msgid "activated"
 msgstr "aktiviert"
 
+#: SetupScreen.py:64
 msgid "deactivated"
 msgstr "deaktiviert"
 
+#: TSRecordingJob.py:23
 msgid "TS recording"
 msgstr "TS-Aufnahme"
 
+#: TSRecordingTask.py:25
 msgid "Timeshift recording"
 msgstr "Timeshift-Aufnahme"
 
+#: TimeshiftOverview.py:28 TimeshiftOverview.py:29 TimeshiftOverview.py:30
+#: TimeshiftOverview.py:31 TimeshiftOverview.py:39
 msgid "Exit"
 msgstr "Beenden"
 
+#: TimeshiftOverview.py:36
 msgid "Timeshifts Overview"
 msgstr "Timeshift-Überblick"
 
+#: TimeshiftOverview.py:60
 msgid "type"
 msgstr "Typ"
 
+#: TimeshiftOverview.py:60
 msgid "fixed"
 msgstr "fest"
 
+#: TimeshiftOverview.py:60
 msgid "variable"
 msgstr "variabel"
 
+#: TimeshiftOverview.py:61
 msgid "recordings"
 msgstr "Aufnahmen"
 
+#: plugin.py:48
 msgid "Configure timeshift modes and channels"
 msgstr "Konfiguration von Timeshift-Modi und -Kanälen"
 
@@ -177,30 +212,3 @@ msgstr "Schreibfehler während der Aufnahme, ist vielleicht die Platte voll?"
 
 msgid "Cancel"
 msgstr "Abbrechen"
-
-msgid "End"
-msgstr "Ende"
-
-msgid "Infobar/Play"
-msgstr "Infobar/Play"
-
-msgid "Play/Pause"
-msgstr "Play/Pause"
-
-msgid "Stop playback"
-msgstr "Stoppe Playback"
-
-msgid "Skip forward"
-msgstr "Springe vorwärts"
-
-msgid "Skip backward"
-msgstr "Springe zurück"
-
-msgid "EPG Info"
-msgstr "EPG Information"
-
-msgid "Do you want to resume playback at position: %d:%02d:%02d?"
-msgstr "Soll Playback an Position %d:%02d:%02d fortgesetzt werden?"
-
-msgid "automatic"
-msgstr "automatisch"
