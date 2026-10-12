@@ -3,7 +3,7 @@
 
 
 import os
-from time import time
+from time import monotonic, time
 from Components.ActionMap import HelpableActionMap
 from Components.config import config
 from Components.Pixmap import Pixmap
@@ -11,7 +11,7 @@ from Components.ServiceEventTracker import ServiceEventTracker, InfoBarBase
 from Components.Sources.COCCurrentService import COCCurrentService
 from Screens.Screen import Screen, ScreenSummary
 from Screens.HelpMenu import HelpableScreen
-from Screens.InfoBarGenerics import InfoBarAudioSelection, InfoBarShowHide, InfoBarNotifications
+from Screens.InfoBarGenerics import InfoBarAudioSelection, InfoBarSeek, InfoBarShowHide, InfoBarNotifications
 from Screens.MessageBox import MessageBox
 from ServiceReference import ServiceReference
 from Tools.LoadPixmap import LoadPixmap
@@ -43,6 +43,12 @@ class CockpitPlayer(
 
     ENABLE_RESUME_SUPPORT = False
     ALLOW_SUSPEND = False
+
+    REWIND_EOF_WINDOW = 1.5    # seconds after a rewind started in which an end of file is not believed
+    REWIND_EOF_RETRIES = 2     # how often the rewind is started again for it
+    rewind_started = None
+    rewind_retries = 0
+    skip_to_live = False
 
     def __init__(self, session, service, config_plugins_plugin, timeshift_start_time, infobar_instance, service_ref):
         logger.info("timeshift_start_time: %s", timeshift_start_time)
@@ -87,10 +93,12 @@ class CockpitPlayer(
             screen=self,
             eventmap={
                 iPlayableService.evStart: self.__serviceStarted,
+                iPlayableService.evNewProgramInfo: self.__newProgramInfo,
             }
         )
 
         actions = {
+            "OK": (self.ok, _("Infobar/Play")),
             "EXIT": (self.leavePlayer, _("Stop timeshift")),
             "STOP": (self.leavePlayer, _("Stop timeshift")),
             "POWER": (self.powerDown, _("Power off")),
@@ -121,6 +129,58 @@ class CockpitPlayer(
 
     def noOp(self):
         return
+
+    def setSeekState(self, state):
+        result = super().setSeekState(state)
+        try:
+            speed = self.seekstate[1]
+        except AttributeError:   # not set yet while InfoBarSeek is still being initialised
+            speed = 0
+        if speed < 0:
+            self.rewind_started = monotonic()
+        else:
+            self.rewind_started = None
+            self.rewind_retries = 0
+        return result
+
+    def _InfoBarSeek__evEOF(self):  # pylint: disable=invalid-name
+        # The name is the one InfoBarSeek registers its end of file handler under (its private __evEOF).
+        # Rewinding can't run into the end of the file. An end of file that arrives within a moment of the rewind
+        # being started is the file push thread finishing its wait for the driver in the normal play at the live
+        # edge that the rewind interrupted (the log shows "wait for driver eof ok" instead of "aborted by signal"
+        # in exactly those cases). InfoBarSeek takes it for the real end of the file, seeks to the end and goes
+        # back to play: the left key seems to do nothing. The rewind is started again instead.
+        if (self.seekstate[1] < 0 and self.rewind_started is not None
+                and monotonic() - self.rewind_started < self.REWIND_EOF_WINDOW
+                and self.rewind_retries < self.REWIND_EOF_RETRIES):
+            self.rewind_retries += 1
+            logger.info("end of file %.2fs after the rewind started, starting it again (%s/%s): %s",
+                        monotonic() - self.rewind_started, self.rewind_retries, self.REWIND_EOF_RETRIES, self.seekstate)
+            self.setSeekState(self.seekstate)
+            return
+        # The end of the file of a timeshift is the live edge: the recording goes on, and the file push thread waits
+        # for more data (it gives up only after ten end of file events without a new byte). InfoBarSeek treats it as
+        # the end of a recording: it seeks to the end, then seeks 5 s back and plays (doEofInternal). The index of the
+        # recording lags behind the end of the file, so the seek back ends at the end again, the push thread reports
+        # the end of the file at once, and this repeats about 50 times per second: the play never starts.
+        # Fast forward and slow motion go to normal play where they are, the end of the file in normal play is
+        # waited out.
+        if self.seekstate[1] > 1 or self.seekstate[2] > 0:
+            logger.info("end of file while fast forwarding or in slow motion, back to play: %s", self.seekstate)
+            self.setSeekState(self.SEEK_STATE_PLAY)
+            return
+        if self.seekstate == self.SEEK_STATE_PLAY:
+            logger.debug("end of file in play, waiting for the recording to grow")
+            return
+        InfoBarSeek._InfoBarSeek__evEOF(self)
+
+    def ok(self):
+        # while playing normally OK shows/hides the infobar; while fast forwarding, rewinding, in slow motion or
+        # paused it returns to normal playback (the same as in CockpitPlayer of Common)
+        if self.seekstate == self.SEEK_STATE_PLAY:
+            self.toggleShow()
+        else:
+            self.playpauseService()
 
     def blueKey(self):
         self.session.open(TimeshiftOverview, self.infobar_instance)
@@ -203,7 +263,26 @@ class CockpitPlayer(
                 self.pauseService()
             else:
                 self.pauseService()
-                self.doSkip(int(time()) - self.timeshift_start_time)
+                # to the point in the timeshift that is live now: not before the program info of the file is there
+                # (__newProgramInfo), the file can't be read before and Enigma2 itself seeks to its start then
+                self.skip_to_live = True
+
+    def __newProgramInfo(self):
+        # eDVBServicePlay creates and starts the decoder when the program info of the file arrives, about a second
+        # after evStart. A pause before that finds no decoder and is lost (eDVBServicePlay::pause returns without
+        # remembering it), the decoder then plays: the player shows pause and the screen saver starts while the
+        # video plays. The pause is given again now that the decoder is there.
+        if self.seekstate == self.SEEK_STATE_PAUSE:
+            service = self.session.nav.getCurrentService()
+            pauseable = service and service.pause()
+            if pauseable is not None:
+                logger.info("decoder started while paused, pausing it: %s", self.seekstate)
+                pauseable.pause()
+        # eDVBServicePlay has just seeked to the start of the file (its first program info of a recording), after
+        # which the permanent timeshift goes to the point that is live
+        if self.skip_to_live:
+            self.skip_to_live = False
+            self.doSkip(int(time()) - self.timeshift_start_time)
 
     def showMovieInfo(self):
         # self.event is only ever refreshed as a side effect of

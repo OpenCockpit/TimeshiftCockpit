@@ -8,6 +8,7 @@
 		<item text="Fixed timeshift service #2" description="Press OK to select service for fixed timeshift #2.">config.plugins.timeshiftcockpit.fixed2</item>
 		<!--item text="Recording directory" description="Select directory for timeshift recordings.">config.plugins.timeshiftcockpit.videodir</item-->
 		<item text="Cover source" description="Select the cover source.">config.plugins.timeshiftcockpit.cover_source</item>
+		<item text="Enable stream timeshift" description="Select whether to enable or disable timeshift for streams.">config.plugins.timeshiftcockpit.enable_stream</item>
 		<item level="2" text="Log level" description="Select debug log level.">config.plugins.timeshiftcockpit.debug_log_level</item>
 	</setup>
 </setupxml>

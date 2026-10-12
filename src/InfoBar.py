@@ -120,7 +120,7 @@ class InfoBar(InfoBarOrg):
         logger.info("service_str: %s, timeshifts: %s",
                     service_str, self.timeshifts.keys())
         if service_str is not None:
-            if service_str.startswith("4097:"):
+            if service_str.startswith("4097:") and config.plugins.timeshiftcockpit.enable_stream.value is False:
                 logger.info("skipping timeshift for 4097 service: %s", service_str)
                 return
             logger.debug("max_timeshifts: %s", self.max_timeshifts)

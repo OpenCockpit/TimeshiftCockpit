@@ -45,3 +45,4 @@ logger.debug(
     "fixed2: %s", config.plugins.timeshiftcockpit.fixed2.value)
 config.plugins.timeshiftcockpit.videodir = ConfigSelection(
     default=config.usage.timeshift_path.value, choices=[config.usage.timeshift_path.value])
+config.plugins.timeshiftcockpit.enable_stream = ConfigYesNo(default=True)

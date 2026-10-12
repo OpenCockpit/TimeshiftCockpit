@@ -14,6 +14,7 @@ TimeshiftCockpit is a plugin for Open Enigma2 receivers that provides advanced t
 	- variable permanent timeshift (always timeshifts current channel)
 	- fixed permanent timeshift (of up to 2 fixed services)
 - record every timeshift event (pressing the REC key)
+- supports dvb and stream channels (that can be recorded)
 
 ## Usage
 - PLAY/PAUSE to start on demand timeshift or playback of permanent timeshift
@@ -36,3 +37,4 @@ TimeshiftCockpit is a plugin for Open Enigma2 receivers that provides advanced t
 
 ## Links
 - Installation: https://OpenCockpit.github.io/TimeshiftCockpit
+- User Guide: https://github.com/OpenCockpit/TimeshiftCockpit/wiki
