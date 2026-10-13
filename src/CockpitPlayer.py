@@ -295,9 +295,6 @@ class CockpitPlayer(
             self.session.open(MovieInfoEPG, self.event,
                               ServiceReference(self.service))
 
-    def showPVRStatePic(self, show):
-        self.show_state_pic = show
-
     def leavePlayer(self, ret_val=None):
         logger.info("...")
         self.session.nav.stopService()
@@ -309,8 +306,6 @@ class CockpitPlayer(
 
     def doEofInternal(self, playing):
         logger.info("playing: %s, self.execing: %s", playing, self.execing)
-        # self.pvr_state_dialog.hide()
-        self.showPVRStatePic(False)
         # Only recover-and-resume if playback was actually running when EOF
         # hit (same gating CockpitStreamingPlayer.py's doEofInternal() already
         # uses) - a timeshift file is still actively growing, so hitting EOF
@@ -321,5 +316,12 @@ class CockpitPlayer(
         # (pressing pause to start a timeshift), leaving playback running
         # instead of frozen on the live frame.
         if playing:
-            self.doSeekRelative(-secondsToPts(5))
-            self.setSeekState(self.SEEK_STATE_PLAY)
+            # No stop icon for the end of the file (InfoBarSeek has shown the EOF state already), the playback goes
+            # on. Only for the recovery: this used to suppress the icon for good, so the pause, rewind and fast
+            # forward icons were missing from then on (EOF events come every second while paused at the live edge).
+            self.showPVRStatePic(False)
+            try:
+                self.doSeekRelative(-secondsToPts(5))
+                self.setSeekState(self.SEEK_STATE_PLAY)
+            finally:
+                self.showPVRStatePic(True)
