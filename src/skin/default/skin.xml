@@ -16,7 +16,7 @@
 		<color name="blue" value="#1e4ab5"/>
 	</colors>
 	<fonts>
-		<font filename="fonts/DejaVuSans.ttf" name="Regular" scale="89"/>
+		<font filename="/usr/share/enigma2/FontCockpit/fonts/DejaVuSans.ttf" name="Regular" scale="89"/>
 		<font filename="Roboto-Bold.ttf" name="Bold" scale="71"/>
 	</fonts>
 	<colors>

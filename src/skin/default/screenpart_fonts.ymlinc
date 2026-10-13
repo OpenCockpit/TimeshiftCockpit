@@ -1,7 +1,7 @@
 - fonts:
     children:
       - font:
-          filename: "fonts/DejaVuSans.ttf"
+          filename: "/usr/share/enigma2/FontCockpit/fonts/DejaVuSans.ttf"
           name: "Regular"
           scale: "89"
       - font:
