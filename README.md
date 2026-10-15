@@ -35,6 +35,8 @@ TimeshiftCockpit is a plugin for Open Enigma2 receivers that provides advanced t
 ## Limitations
 - Tested on OpenViX and OpenATV with DM900.
 
-## Links
-- Installation: https://OpenCockpit.github.io/TimeshiftCockpit
-- User Guide: https://github.com/OpenCockpit/TimeshiftCockpit/wiki
+## Installation
+- https://OpenCockpit.github.io/TimeshiftCockpit
+
+## Wiki
+- https://github.com/OpenCockpit/TimeshiftCockpit/wiki
