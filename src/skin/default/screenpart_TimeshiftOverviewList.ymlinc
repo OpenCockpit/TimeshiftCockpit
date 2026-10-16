@@ -1,5 +1,5 @@
 convert:
-  type: "COCTemplatedMultiContentEx"
+  type: "TemplatedMultiContentEx"
   cell:
     vars:
       - "ih = 70"
@@ -14,7 +14,7 @@ convert:
       - "col1_w = x2-x1-hspace"
     itemHeight: ih
     fonts:
-      - "Regular;26"
+      - "$label_font"
     fields:
       - icon:
           position: "hspace//2,(ih-thumb_h)//2"
