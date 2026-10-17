@@ -61,6 +61,10 @@ class CockpitPlayer(
         Screen.__init__(self, session)
         HelpableScreen.__init__(self)
         InfoBarShowHide.__init__(self)
+        # openATV binds OK to the stock toggleShow on key *release* (keymap flags="b"), OpenViX on key press. This
+        # player toggles the infobar itself when OK is pressed, so on openATV the release would toggle it right back
+        # and the infobar would vanish at once. The stock toggleShow is not needed here: ok() does its job.
+        self["ShowHideActions"].actions["toggleShow"] = self.ignoreToggleShow
         InfoBarBase.__init__(self)
         InfoBarAudioSelection.__init__(self)
         InfoBarNotifications.__init__(self)
@@ -173,6 +177,9 @@ class CockpitPlayer(
             logger.debug("end of file in play, waiting for the recording to grow")
             return
         InfoBarSeek._InfoBarSeek__evEOF(self)
+
+    def ignoreToggleShow(self):
+        pass
 
     def ok(self):
         # while playing normally OK shows/hides the infobar; while fast forwarding, rewinding, in slow motion or
