@@ -3,4 +3,4 @@ Maintainer: xcentaurix
 Package: enigma2-plugin-extensions-timeshiftcockpit
 Architecture: all
 Conflicts: enigma2-plugin-extensions-permanenttimeshift
-Depends: enigma2-plugin-systemplugins-powercockpit, enigma2-plugin-skincomponents-componentscockpit, enigma2-plugin-systemplugins-covercockpit, enigma2-plugin-systemplugins-jobcockpit, enigma2-plugin-systemskins-fontcockpit
+Depends: enigma2-plugin-systemplugins-powercockpit, enigma2-plugin-skincomponents-componentscockpit, enigma2-plugin-systemplugins-covercockpit, enigma2-plugin-systemplugins-jobcockpit
