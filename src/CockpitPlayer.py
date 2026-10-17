@@ -244,8 +244,11 @@ class CockpitPlayer(
         # its own state icons ("Load SVG with proper scaling to fit the
         # widget"). Without them LoadPixmap() has no target size for a
         # vector image, and setPixmap() ends up with nothing visible.
+        # rasterize at the widget's real size: a skin written for 1920x1080 is scaled down on an image
+        # that runs its GUI at 1280x720, and a fixed 60x60 icon would then not fit its widget
+        size = self["player_icon"].instance.size()
         self["player_icon"].instance.setPixmap(LoadPixmap(getSkinPath(
-            "images/" + player_icon), cached=True, width=60, height=60, scaletoFit=1))
+            "images/" + player_icon), cached=True, width=size.width() or 60, height=size.height() or 60, scaletoFit=1))
         if not os.path.exists(config.usage.timeshift_path.value):
             self.session.open(MessageBox, _("Timeshift directory does not exist")
                               + ": " + config.usage.timeshift_path.value, MessageBox.TYPE_ERROR)

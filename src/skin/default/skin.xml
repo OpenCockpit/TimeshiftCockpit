@@ -54,10 +54,10 @@
 	</fonts>
 	<screen backgroundColor="md_surface" flags="wfNoBorder" name="TimeshiftOverview" position="center,center" resolution="1920,1080" size="1200,720">
 		<eLabel backgroundColor="md_surface_container_high" position="0,0" size="1200,55"/>
-		<widget font="Bold;36" foregroundColor="md_primary" position="10,0" render="Label" size="1180,55" source="Title" transparent="1" valign="center" zPosition="1"/>
+		<widget font="Bold;42" foregroundColor="md_primary" position="10,0" render="Label" size="1180,55" source="Title" transparent="1" valign="center" zPosition="1"/>
 		<eLabel backgroundColor="md_outline_variant" position="0,54" size="1200,2"/>
 		<widget backgroundColorSelected="md_surface_container_high" enableWrapAround="1" foregroundColorSelected="md_primary" itemCornerRadiusSelected="8" position="20,75" render="Listbox" scrollbarMode="showNever" size="1160,560" source="list" transparent="1">
-			<convert type="TemplatedMultiContentEx">
+			<convert type="COCTemplatedMultiContentEx">
 			{
 				"var": (
 					ih := 70,
@@ -84,19 +84,19 @@
 		</widget>
 		<eLabel backgroundColor="md_outline_variant" position="0,664" size="1200,2"/>
 		<eLabel backgroundColor="md_surface_container_high" position="0,665" size="1200,55"/>
-		<widget conditional="key_red" font="Bold;36" foregroundColor="md_key_red" halign="center" name="key_red" noWrap="1" position="0,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
-		<widget conditional="key_green" font="Bold;36" foregroundColor="md_key_green" halign="center" name="key_green" noWrap="1" position="255,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
-		<widget conditional="key_yellow" font="Bold;36" foregroundColor="md_key_yellow" halign="center" name="key_yellow" noWrap="1" position="510,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
-		<widget conditional="key_blue" font="Bold;36" foregroundColor="md_key_blue" halign="center" name="key_blue" noWrap="1" position="765,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
-		<widget conditional="key_menu" font="Bold;36" foregroundColor="md_on_surface" halign="center" name="key_menu" noWrap="1" position="1020,665" size="90,55" transparent="1" valign="center" zPosition="2"/>
-		<widget conditional="key_info" font="Bold;36" foregroundColor="md_on_surface" halign="center" name="key_info" noWrap="1" position="1110,665" size="90,55" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_red" font="Regular;26" foregroundColor="md_key_red" halign="center" name="key_red" noWrap="1" position="0,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_green" font="Regular;26" foregroundColor="md_key_green" halign="center" name="key_green" noWrap="1" position="255,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_yellow" font="Regular;26" foregroundColor="md_key_yellow" halign="center" name="key_yellow" noWrap="1" position="510,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_blue" font="Regular;26" foregroundColor="md_key_blue" halign="center" name="key_blue" noWrap="1" position="765,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_menu" font="Regular;26" foregroundColor="md_on_surface" halign="center" name="key_menu" noWrap="1" position="1020,665" size="90,55" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_info" font="Regular;26" foregroundColor="md_on_surface" halign="center" name="key_info" noWrap="1" position="1110,665" size="90,55" transparent="1" valign="center" zPosition="2"/>
 	</screen>
 	<screen backgroundColor="md_transparent" flags="wfNoBorder" name="CockpitPlayer" position="center,center" resolution="1920,1080" size="1920,1080">
 		<ePixmap alphatest="blend" pixmap="~/../images/player_bg_gradient.png" position="0,860" size="1920,220" zPosition="-1"/>
 		<widget font="Regular;30" halign="right" position="960,1010" render="Label" size="225,50" source="Service" transparent="1" valign="center">
 			<convert type="COCServicePosition">Position,Negate</convert>
 		</widget>
-		<widget font="Regular;36" halign="center" position="860,1010" render="Label" size="200,50" source="Service" transparent="1" valign="center">
+		<widget font="Regular;34" halign="center" position="860,1010" render="Label" size="200,50" source="Service" transparent="1" valign="center">
 			<convert type="COCMovieInfo">MovieDuration</convert>
 			<convert type="ClockToText">InMinutes</convert>
 		</widget>
@@ -104,7 +104,7 @@
 			<convert type="COCServicePosition">Remaining</convert>
 		</widget>
 		<widget alphatest="blend" name="player_icon" position="30,900" size="60,60" zPosition="2"/>
-		<widget font="Regular;44" noWrap="1" position="105,900" render="Label" size="1600,60" source="Service" transparent="1" valign="center">
+		<widget font="Regular;40" noWrap="1" position="105,900" render="Label" size="1600,60" source="Service" transparent="1" valign="center">
 			<convert type="COCEventName">Name</convert>
 		</widget>
 		<widget font="Bold;42" halign="center" position="1730,900" render="Label" size="160,60" source="Service" transparent="1" valign="center">
@@ -148,6 +148,6 @@
 	</screen>
 	<screen backgroundColor="md_transparent" flags="wfNoBorder" name="ScreenPVRState" position="center,center" resolution="1920,1080" size="100,160" zPosition="1000">
 		<widget alphatest="blend" name="state_pic" position="0,0" size="100,100"/>
-		<widget font="Regular;36" halign="center" name="state" position="0,110" size="100,54" transparent="1" valign="center"/>
+		<widget font="Regular;34" halign="center" name="state" position="0,110" size="100,54" transparent="1" valign="center"/>
 	</screen>
 </skin>

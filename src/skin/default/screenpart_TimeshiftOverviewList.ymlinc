@@ -1,5 +1,5 @@
 convert:
-  type: "TemplatedMultiContentEx"
+  type: "COCTemplatedMultiContentEx"
   cell:
     vars:
       - "ih = 70"
