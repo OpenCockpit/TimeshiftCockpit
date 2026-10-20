@@ -52,11 +52,16 @@
 		<font filename="nmsbd.ttf" name="FdLcD" scale="100"/>
 		<font filename="OpenSans-Regular.ttf" name="FdLcDLight" scale="100"/>
 	</fonts>
-	<screen backgroundColor="md_surface" flags="wfNoBorder" name="TimeshiftOverview" position="center,center" resolution="1920,1080" size="1200,720">
-		<eLabel backgroundColor="md_surface_container_high" position="0,0" size="1200,55"/>
-		<widget font="Bold;42" foregroundColor="md_primary" position="10,0" render="Label" size="1180,55" source="Title" transparent="1" valign="center" zPosition="1"/>
-		<eLabel backgroundColor="md_outline_variant" position="0,54" size="1200,2"/>
-		<widget backgroundColorSelected="md_surface_container_high" enableWrapAround="1" foregroundColorSelected="md_primary" itemCornerRadiusSelected="8" position="20,75" render="Listbox" scrollbarMode="showNever" size="1160,560" source="list" transparent="1">
+	<screen backgroundColor="md_transparent" flags="wfNoBorder" name="TimeshiftOverview" position="fill" resolution="1920,1080">
+		<eLabel backgroundColor="md_surface_container_high" cornerRadius="16" position="370,111" size="1180,838" zPosition="-11"/>
+		<eLabel backgroundColor="md_surface" cornerRadius="14" position="372,173" size="1176,714" zPosition="-10"/>
+		<widget actionButtonsPos="farRight" addon="ScreenButtonsBar" backgroundColor="md_surface_container_high" connection="key_red,key_green,key_yellow,key_blue,key_play,key_previous,key_left,key_info,key_help,key_pvr,key_menu,key_text,VKeyIcon,key_next,key_right,key_0" font="Regular;26" layoutStyle="fluid" pixmaps="key_red:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_red.png,key_green:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_green.png,key_yellow:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_yellow.png,key_blue:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_blue.png,key_play:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_play.png,key_info:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_info.png,key_help:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_help.png,key_pvr:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_pvr.png,key_menu:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_menu.png,key_text:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_text.png,VKeyIcon:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_text.png,key_previous:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_prev.png,key_next:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_next.png,key_left:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_left.png,key_right:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_right.png,key_0:/usr/lib/enigma2/python/Plugins/Extensions/TimeshiftCockpit/skin/images/buttons/key_0.png" position="390,901" size="1140,36" spacingActionColorGroups="60" spacingColor="120" spacingPixmapText="10" zPosition="10"/>
+		<widget backgroundColor="md_surface_container_low" font="Bold;36" foregroundColor="md_on_surface" halign="right" position="1112,113" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<eLabel backgroundColor="md_surface_container_high" position="390,114" size="920,60" zPosition="19"/>
+		<widget addon="ScreenHeader" backgroundColor="md_surface_container_high" connection="Image,Title,ScreenPath" pathFont="Bold;18" pathForegroundColor="md_primary" position="390,113" size="920,60" titleFont="Bold;28" titleForegroundColor="md_primary" titleSingleFont="Bold;42" transparent="1" zPosition="20"/>
+		<widget backgroundColorSelected="md_surface_container_high" enableWrapAround="1" foregroundColorSelected="md_primary" itemCornerRadiusSelected="6" position="390,183" render="Listbox" scrollbarMode="showNever" size="1140,700" source="list" transparent="1">
 			<convert type="COCTemplatedMultiContentEx">
 			{
 				"var": (
@@ -82,14 +87,6 @@
 			}
 			</convert>
 		</widget>
-		<eLabel backgroundColor="md_outline_variant" position="0,664" size="1200,2"/>
-		<eLabel backgroundColor="md_surface_container_high" position="0,665" size="1200,55"/>
-		<widget conditional="key_red" font="Regular;26" foregroundColor="md_key_red" halign="center" name="key_red" noWrap="1" position="0,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
-		<widget conditional="key_green" font="Regular;26" foregroundColor="md_key_green" halign="center" name="key_green" noWrap="1" position="255,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
-		<widget conditional="key_yellow" font="Regular;26" foregroundColor="md_key_yellow" halign="center" name="key_yellow" noWrap="1" position="510,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
-		<widget conditional="key_blue" font="Regular;26" foregroundColor="md_key_blue" halign="center" name="key_blue" noWrap="1" position="765,665" size="255,55" transparent="1" valign="center" zPosition="2"/>
-		<widget conditional="key_menu" font="Regular;26" foregroundColor="md_on_surface" halign="center" name="key_menu" noWrap="1" position="1020,665" size="90,55" transparent="1" valign="center" zPosition="2"/>
-		<widget conditional="key_info" font="Regular;26" foregroundColor="md_on_surface" halign="center" name="key_info" noWrap="1" position="1110,665" size="90,55" transparent="1" valign="center" zPosition="2"/>
 	</screen>
 	<screen backgroundColor="md_transparent" flags="wfNoBorder" name="CockpitPlayer" position="center,center" resolution="1920,1080" size="1920,1080">
 		<ePixmap alphatest="blend" pixmap="~/../images/player_bg_gradient.png" position="0,860" size="1920,220" zPosition="-1"/>
