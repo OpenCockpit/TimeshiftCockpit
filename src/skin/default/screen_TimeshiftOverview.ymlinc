@@ -14,7 +14,6 @@ screen:
         itemCornerRadiusSelected: "$radius_item"
         position: "20,72"
         render: "Listbox"
-        scrollbarMode: "showNever"
         size: "1140,700"
         source: "list"
         transparent: "1"
