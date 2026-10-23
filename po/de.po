@@ -177,6 +177,12 @@ msgstr "Schreibfehler während der Aufnahme, ist vielleicht die Platte voll?"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+msgid "Infobar/Play"
+msgstr "Infobar/Play"
+
+msgid "start timeshift"
+msgstr "Starte Timeshift"
+
 msgid "Enable stream timeshift"
 msgstr "Timeshift für Streams"
 
@@ -185,9 +191,6 @@ msgstr "Aktiviere/Deaktiviere Timeshift für Streams."
 
 msgid "End"
 msgstr "Ende"
-
-msgid "Infobar/Play"
-msgstr "Infobar/Play"
 
 msgid "Play/Pause"
 msgstr "Play/Pause"

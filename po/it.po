@@ -149,6 +149,72 @@ msgstr "Errore scrittura in registrazione. Disco pieno?"
 msgid "Open setup"
 msgstr "Impostazioni"
 
+msgid "Select a timeshift event for playback"
+msgstr "Selezionare un evento timeshift da riprodurre"
+
+msgid "Select a timeshift event for recording"
+msgstr "Selezionare un evento timeshift da registrare"
+
+msgid "Infobar/Play"
+msgstr "Infobar/Play"
+
+msgid "Show events"
+msgstr "Mostrare eventi"
+
+msgid "Record timeshift Event"
+msgstr "Registrare evento timeshift"
+
+msgid "Show active timeshifts"
+msgstr "Mostrare timeshift attivi"
+
+msgid "Manage timeshift recordings"
+msgstr "Gestire registrazioni timeshift"
+
+msgid "Recording timeshift event now"
+msgstr "Registrazione evento timeshift in corso"
+
+msgid "start timeshift"
+msgstr "Avviare timeshift"
+
+msgid "No timeshift available for playback"
+msgstr "Nessun timeshift disponibile per la riproduzione"
+
+msgid "Configure timeshift modes and channels"
+msgstr "Configurare modalità e canali timeshift"
+
+msgid "TimeshiftCockpit has been %s. Restart Enigma2 now for this to take effect?"
+msgstr "TimeshiftCockpit è stato %s. Riavviare Enigma2 ora per rendere effettiva la modifica?"
+
+msgid "activated"
+msgstr "attivato"
+
+msgid "deactivated"
+msgstr "disattivato"
+
+msgid "Timeshifts Overview"
+msgstr "Panoramica timeshift"
+
+msgid "Exit"
+msgstr "Esci"
+
+msgid "type"
+msgstr "tipo"
+
+msgid "recordings"
+msgstr "Registrazioni"
+
+msgid "fixed"
+msgstr "fisso"
+
+msgid "variable"
+msgstr "variabile"
+
+msgid "TS recording"
+msgstr "Registrazione TS"
+
+msgid "Timeshift recording"
+msgstr "Registrazione timeshift"
+
 msgid "Cover source"
 msgstr ""
 
@@ -159,9 +225,6 @@ msgid "Enable stream timeshift"
 msgstr ""
 
 msgid "Select whether to enable or disable timeshift for streams."
-msgstr ""
-
-msgid "Infobar/Play"
 msgstr ""
 
 msgid "Play/Pause"
