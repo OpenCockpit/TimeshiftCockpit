@@ -237,30 +237,6 @@ msgstr "Grabación TS"
 msgid "Timeshift recording"
 msgstr "Grabación de timeshift"
 
-msgid "Cover source"
-msgstr ""
-
-msgid "Fixed timeshift service #1"
-msgstr ""
-
-msgid "Fixed timeshift service #2"
-msgstr ""
-
-msgid "Press OK to select service for fixed timeshift #1."
-msgstr ""
-
-msgid "Press OK to select service for fixed timeshift #2."
-msgstr ""
-
-msgid "Select the cover source."
-msgstr ""
-
-msgid "Enable stream timeshift"
-msgstr ""
-
-msgid "Select whether to enable or disable timeshift for streams."
-msgstr ""
-
 msgid "Play/Pause"
 msgstr ""
 

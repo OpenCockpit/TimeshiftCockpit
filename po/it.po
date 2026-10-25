@@ -215,18 +215,6 @@ msgstr "Registrazione TS"
 msgid "Timeshift recording"
 msgstr "Registrazione timeshift"
 
-msgid "Cover source"
-msgstr ""
-
-msgid "Select the cover source."
-msgstr ""
-
-msgid "Enable stream timeshift"
-msgstr ""
-
-msgid "Select whether to enable or disable timeshift for streams."
-msgstr ""
-
 msgid "Play/Pause"
 msgstr ""
 
