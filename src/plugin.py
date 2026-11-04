@@ -24,6 +24,14 @@ def openSettings(session, **__):
     session.open(SetupScreen)
 
 
+def menuHook(menuid, **__):
+    # Menu / Setup / Recordings, Playback & Timeshift: next to Recording (weight 10), Playback (12) and Timeshift (15).
+    # The id must not be "timeshift_setup": an entry of a plugin with the id of an existing one replaces it.
+    if menuid == "rec":
+        return [("TimeshiftCockpit", openSettings, "timeshiftcockpit_setup", 16)]
+    return []
+
+
 def autoStart(reason, **__):
     if reason == 0:  # startup
         if config.plugins.timeshiftcockpit.enabled.value:
@@ -52,6 +60,13 @@ def Plugins(**__):
                 PluginDescriptor.WHERE_EXTENSIONSMENU,
             ],
             fnc=openSettings
+        ),
+        PluginDescriptor(
+            name="TimeshiftCockpit",
+            description=_("Configure timeshift modes and channels"),
+            where=PluginDescriptor.WHERE_MENU,
+            needsRestart=False,
+            fnc=menuHook
         ),
     ]
     try:
