@@ -1,0 +1,220 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TimeshiftCockpit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-27 16:20+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: xcentaurix\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.7\n"
+"X-Loco-Source-Locale: en-US\n"
+"X-Loco-Project-Id: 47158\n"
+"X-Loco-Api-Version: 1.0.19 20180501-1\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Select bouquet"
+msgstr "Bouquet-Auswahl"
+
+msgid "Select channel"
+msgstr "Kanal-Auswahl"
+
+msgid "Stop timeshift"
+msgstr "Beende Timeshift"
+
+msgid "Power off"
+msgstr "Ausschalten"
+
+msgid "Movie info"
+msgstr "Video-Informationen"
+
+msgid "Next event"
+msgstr "Nächste Sendung"
+
+msgid "Previous event"
+msgstr "Vorherige Sendung"
+
+msgid "Show events"
+msgstr "Sendungsauswahl"
+
+msgid "Record timeshift Event"
+msgstr "Aufnahme einer Timeshift-Sendung"
+
+msgid "Show active timeshifts"
+msgstr "Aktive Timeshift Kanäle anzeigen"
+
+msgid "Manage timeshift recordings"
+msgstr "Timeshift-Aufnahmen verwalten"
+
+msgid "Open service list"
+msgstr "Öffne Senderliste"
+
+msgid "Select a timeshift event for playback"
+msgstr "Auswahl einer Timeshift-Sendung für Playback"
+
+msgid "Select a timeshift event for recording"
+msgstr "Auswahl einer Timeshift-Sendung für Aufnahme"
+
+msgid "Recording timeshift event now"
+msgstr "Timeshift-Sendung wird aufgenommen"
+
+msgid "Timeshift directory does not exist"
+msgstr "Timeshift-Verzeichnis existiert nicht"
+
+msgid "Inactive"
+msgstr "Inaktiv"
+
+msgid "Select Event"
+msgstr "Sendungsauswahl"
+
+msgid "No timeshift available for playback"
+msgstr "Timeshift ist auf diesem Kanal nicht verfügbar"
+
+msgid "min"
+msgstr "Min"
+
+msgid "Setup"
+msgstr "Einstellungen"
+
+msgid "TimeshiftCockpit has been %s. Restart Enigma2 now for this to take effect?"
+msgstr "TimeshiftCockpit wurde %s. Soll Enigma2 neu gestartet werden, um dies aufzuführen?"
+
+msgid "activated"
+msgstr "aktiviert"
+
+msgid "deactivated"
+msgstr "deaktiviert"
+
+msgid "TS recording"
+msgstr "TS-Aufnahme"
+
+msgid "Timeshift recording"
+msgstr "Timeshift-Aufnahme"
+
+msgid "Exit"
+msgstr "Beenden"
+
+msgid "Timeshifts Overview"
+msgstr "Timeshift-Überblick"
+
+msgid "type"
+msgstr "Typ"
+
+msgid "fixed"
+msgstr "fest"
+
+msgid "variable"
+msgstr "variabel"
+
+msgid "recordings"
+msgstr "Aufnahmen"
+
+msgid "Configure timeshift modes and channels"
+msgstr "Konfiguration von Timeshift-Modi und -Kanälen"
+
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+msgid "GENERAL"
+msgstr "ALLGEMEINES"
+
+msgid "Enable plugin"
+msgstr "Plugin aktivieren"
+
+msgid "Select whether to enable or disable the plugin."
+msgstr "Auswahl zum Aktivieren oder Inaktivieren des Plugins"
+
+msgid "Permanent timeshift"
+msgstr "Permanenter Timeshift"
+
+msgid "Select to enable permanent timeshift."
+msgstr "Auswahl zum Aktivieren von permanentem Timeshift"
+
+msgid "Fixed timeshift service #1"
+msgstr "Fester Timeshift-Kanal #1"
+
+msgid "Press OK to select service for fixed timeshift #1."
+msgstr "OK zur Auswahl des festen Timeshift-Kanals #1"
+
+msgid "Fixed timeshift service #2"
+msgstr "Fester Timeshift-Kanal #2"
+
+msgid "Press OK to select service for fixed timeshift #2."
+msgstr "OK zur Auswahl des festen Timeshift-Kanals #2"
+
+msgid "RECORDING"
+msgstr "AUFNAHME"
+
+msgid "Recording directory"
+msgstr "Aufnahmeverzeichnis"
+
+msgid "Select directory for timeshift recordings."
+msgstr "Auswahl des Verzeichnises für Timeshift-Aufnahmen"
+
+msgid "Cover source"
+msgstr "Cover-Quelle"
+
+msgid "Select the cover source."
+msgstr "Auswahl der Datenquelle für Film-Cover"
+
+msgid "DEBUG"
+msgstr "DEBUG"
+
+msgid "Log level"
+msgstr "Log-Stufe"
+
+msgid "Select debug log level."
+msgstr "Auswahl der Log-Stufe"
+
+msgid "Write error while recording. Disk full?"
+msgstr "Schreibfehler während der Aufnahme, ist vielleicht die Platte voll?"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Infobar/Play"
+msgstr "Infobar/Play"
+
+msgid "start timeshift"
+msgstr "Starte Timeshift"
+
+msgid "Enable stream timeshift"
+msgstr "Timeshift für Streams"
+
+msgid "Select whether to enable or disable timeshift for streams."
+msgstr "Aktiviere/Deaktiviere Timeshift für Streams."
+
+msgid "End"
+msgstr "Ende"
+
+msgid "Play/Pause"
+msgstr "Play/Pause"
+
+msgid "Stop playback"
+msgstr "Stoppe Playback"
+
+msgid "Skip forward"
+msgstr "Springe vorwärts"
+
+msgid "Skip backward"
+msgstr "Springe zurück"
+
+msgid "EPG Info"
+msgstr "EPG Information"
+
+msgid "Do you want to resume playback at position: %d:%02d:%02d?"
+msgstr "Soll Playback an Position %d:%02d:%02d fortgesetzt werden?"
+
+msgid "Do you want to resume this playback?"
+msgstr "Soll Playback fortgesetzt werden?"
+
+msgid "Resume position at %s"
+msgstr "An Position %s fortsetzen"
+
+msgid "automatic"
+msgstr "automatisch"

@@ -1,0 +1,237 @@
+# Signed-off-by: Dario Croci <spaeleus@croci.org>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: TimeshiftCockpit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-15 14:09+0200\n"
+"PO-Revision-Date: 2024-08-15 14:14+0200\n"
+"Last-Translator: Dario Croci <spaeleus@croci.org>\n"
+"Language-Team: Dario Croci <spaeleus@croci.org>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Loco-Source-Locale: en-US\n"
+"X-Loco-Project-Id: 47158\n"
+"X-Loco-Api-Version: 1.0.19 20180501-1\n"
+"X-Poedit-Basepath: ../../../../../../../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Select bouquet"
+msgstr "Selezionare bouquet"
+
+msgid "Select channel"
+msgstr "Selezionare canale"
+
+msgid "End"
+msgstr "Fine"
+
+msgid "Stop timeshift"
+msgstr "Stop timeshift"
+
+msgid "Power off"
+msgstr "Spegnere"
+
+msgid "Movie info"
+msgstr "Info video"
+
+msgid "Next event"
+msgstr "Evento successivo"
+
+msgid "Previous event"
+msgstr "Evento precedente"
+
+msgid "Show Events"
+msgstr "Mostrare eventi"
+
+msgid "Open service list"
+msgstr "Aprire elenco canali"
+
+msgid "Timeshift directory does not exist"
+msgstr "Directory Timeshift non presente"
+
+msgid "Skip forward"
+msgstr "Skip avanti"
+
+msgid "Skip backward"
+msgstr "Skip indietro"
+
+msgid "Inactive"
+msgstr "Nessuno"
+
+msgid "Cancel"
+msgstr "Annullare"
+
+msgid "Save"
+msgstr "Salvare"
+
+msgid "Defaults"
+msgstr "Default"
+
+msgid "Setup"
+msgstr "Impostazioni"
+
+msgid "Really close without saving settings?"
+msgstr "Chiudere senza salvare le impostazioni?"
+
+msgid "Loading default settings will overwrite all settings, really load them?"
+msgstr "Le impostazioni predefinite sovrascriveranno quelle presenti. Eseguire?"
+
+msgid "Some changes require a GUI restart"
+msgstr "Alcune modifiche richiedono il riavvio della GUI"
+
+msgid "Restart GUI now?"
+msgstr "Riavviare la GUI ora?"
+
+msgid "Bookmarks"
+msgstr "Segnalibri"
+
+msgid "Select directory"
+msgstr "Selezionare directory"
+
+msgid "Path does not exist"
+msgstr "Percorso non presente"
+
+msgid "Reset"
+msgstr "Reset"
+
+msgid "GENERAL"
+msgstr "GENERALE"
+
+msgid "Enable plugin"
+msgstr "Abilitare plugin"
+
+msgid "Select whether to enable or disable the plugin."
+msgstr "Determinare se abilitare/disabilitare il plugin."
+
+msgid "Permanent timeshift"
+msgstr "Permanent timeshift"
+
+msgid "Select to enable permanent timeshift."
+msgstr "Abilitare Permanent Timeshift."
+
+msgid "Fixed timeshift service #1"
+msgstr "Timeshift: canale fisso #1"
+
+msgid "Press OK to select service for fixed timeshift #1."
+msgstr "Premere OK per selezionare il canale timeshift fisso #1."
+
+msgid "Fixed timeshift service #2"
+msgstr "Timeshift: canale fisso #2"
+
+msgid "Press OK to select service for fixed timeshift #2."
+msgstr "Premere OK per selezionare il canale timeshift fisso #2."
+
+msgid "DEBUG"
+msgstr "DEBUG"
+
+msgid "Log level"
+msgstr "Livello log"
+
+msgid "Select debug log level."
+msgstr "Selezionare livello log di debug."
+
+msgid "Events"
+msgstr "Eventi"
+
+msgid "Select"
+msgstr "Selezionare"
+
+msgid "min"
+msgstr "min"
+
+msgid "Write error while recording. Disk full?"
+msgstr "Errore scrittura in registrazione. Disco pieno?"
+
+msgid "Open setup"
+msgstr "Impostazioni"
+
+msgid "Select a timeshift event for playback"
+msgstr "Selezionare un evento timeshift da riprodurre"
+
+msgid "Select a timeshift event for recording"
+msgstr "Selezionare un evento timeshift da registrare"
+
+msgid "Infobar/Play"
+msgstr "Infobar/Play"
+
+msgid "Show events"
+msgstr "Mostrare eventi"
+
+msgid "Record timeshift Event"
+msgstr "Registrare evento timeshift"
+
+msgid "Show active timeshifts"
+msgstr "Mostrare timeshift attivi"
+
+msgid "Manage timeshift recordings"
+msgstr "Gestire registrazioni timeshift"
+
+msgid "Recording timeshift event now"
+msgstr "Registrazione evento timeshift in corso"
+
+msgid "start timeshift"
+msgstr "Avviare timeshift"
+
+msgid "No timeshift available for playback"
+msgstr "Nessun timeshift disponibile per la riproduzione"
+
+msgid "Configure timeshift modes and channels"
+msgstr "Configurare modalità e canali timeshift"
+
+msgid "TimeshiftCockpit has been %s. Restart Enigma2 now for this to take effect?"
+msgstr "TimeshiftCockpit è stato %s. Riavviare Enigma2 ora per rendere effettiva la modifica?"
+
+msgid "activated"
+msgstr "attivato"
+
+msgid "deactivated"
+msgstr "disattivato"
+
+msgid "Timeshifts Overview"
+msgstr "Panoramica timeshift"
+
+msgid "Exit"
+msgstr "Esci"
+
+msgid "type"
+msgstr "tipo"
+
+msgid "recordings"
+msgstr "Registrazioni"
+
+msgid "fixed"
+msgstr "fisso"
+
+msgid "variable"
+msgstr "variabile"
+
+msgid "TS recording"
+msgstr "Registrazione TS"
+
+msgid "Timeshift recording"
+msgstr "Registrazione timeshift"
+
+msgid "Play/Pause"
+msgstr ""
+
+msgid "Stop playback"
+msgstr ""
+
+msgid "EPG Info"
+msgstr ""
+
+msgid "Do you want to resume playback at position: %d:%02d:%02d?"
+msgstr ""
+
+msgid "Do you want to resume this playback?"
+msgstr ""
+
+msgid "Resume position at %s"
+msgstr ""
+
+msgid "automatic"
+msgstr ""
