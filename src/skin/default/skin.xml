@@ -172,13 +172,13 @@
 		<widget font="FdLcD;55" halign="center" position="0,0" render="Label" size="392,130" source="parent.Service" transparent="1" valign="center">
 			<convert type="COCEventName">Name</convert>
 		</widget>
-		<widget alphatest="blend" cornerRadius="4" foregroundColor="FdLcdAmber" position="2,142" render="Progress" size="388,16" source="parent.Service" transparent="1" zPosition="2">
+		<widget foregroundColor="FdLcdAmber" position="2,142" render="Progress" size="388,16" source="parent.Service" transparent="1" zPosition="2">
 			<convert type="COCServicePosition">Position</convert>
 		</widget>
-		<widget alphatest="blend" cornerRadius="4" foregroundColor="md_outline" position="2,142" render="Progress" size="388,16" source="parent.Service" transparent="1" zPosition="3">
+		<widget foregroundColor="md_outline" position="2,142" render="Progress" size="388,16" source="parent.Service" transparent="1" zPosition="3">
 			<convert type="COCBeforeTSPosition">Position</convert>
 		</widget>
-		<widget alphatest="blend" borderColor="FdLcdAmber" borderWidth="2" cornerRadius="4" foregroundColor="FdLcdRed" position="0,140" render="Progress" size="392,20" source="parent.Service" transparent="1" zPosition="1">
+		<widget borderColor="FdLcdAmber" borderWidth="2" foregroundColor="FdLcdRed" position="0,140" render="Progress" size="392,20" source="parent.Service" transparent="1" zPosition="1">
 			<convert type="COCRecordPosition">Position</convert>
 		</widget>
 		<widget font="FdLcD;60" halign="left" position="0,170" render="Label" size="200,70" source="parent.Service" transparent="1" valign="center">
