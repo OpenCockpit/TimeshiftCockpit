@@ -1,0 +1,11 @@
+- widget:
+    backgroundColorSelected: "$backgroundColorSelected"
+    foregroundColorSelected: "$foregroundColorSelected"
+    itemCornerRadiusSelected: "$radius_item"
+    position: "0,0"
+    render: "Listbox"
+    size: "$width,$height"
+    source: "list"
+    children:
+      - xmlinc:
+          file: "screenpart_TimeshiftOverviewList.ymlinc"
