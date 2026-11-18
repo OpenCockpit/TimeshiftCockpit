@@ -76,7 +76,8 @@ class CockpitPlayer(
 
         event_start = True
         self.service_started = False
-        self.last_service = session.nav.getCurrentlyPlayingServiceReference()
+        # the service as it was played (of the bouquet), not what it was rewritten to for the player: see MovieCockpit.onDialogShow
+        self.last_service = session.nav.getCurrentlyPlayingServiceOrGroup()
 
         CockpitSeek.__init__(self, session, service, event_start,
                              timeshift_start_time, timeshift=True, service_center=None)
