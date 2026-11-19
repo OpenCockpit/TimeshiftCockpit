@@ -49,6 +49,7 @@ class CockpitPlayer(
     rewind_started = None
     rewind_retries = 0
     skip_to_live = False
+    skipping_with_keys = False   # inside skipForward/skipBackward: the bouquet keys
 
     def __init__(self, session, service, config_plugins_plugin, timeshift_start_time, infobar_instance, service_ref):
         logger.info("timeshift_start_time: %s", timeshift_start_time)
@@ -181,6 +182,26 @@ class CockpitPlayer(
 
     def ignoreToggleShow(self):
         pass
+
+    def skipForward(self):
+        self.skipWithoutInfobar(CockpitSeek.skipForward)
+
+    def skipBackward(self):
+        self.skipWithoutInfobar(CockpitSeek.skipBackward)
+
+    def skipWithoutInfobar(self, skip):
+        # The bouquet keys skip forward and backward in steps, often several times in a row: the infobar that
+        # CockpitSmartSeek.doSkip shows after every seek (showAfterSeek) is in the way then. The other skips (next/previous
+        # event, to the start of an event, to live) go through the same doSkip and still show it.
+        self.skipping_with_keys = True
+        try:
+            skip(self)
+        finally:
+            self.skipping_with_keys = False
+
+    def showAfterSeek(self):
+        if not self.skipping_with_keys:
+            CockpitSeek.showAfterSeek(self)
 
     def ok(self):
         # while playing normally OK shows/hides the infobar; while fast forwarding, rewinding, in slow motion or
