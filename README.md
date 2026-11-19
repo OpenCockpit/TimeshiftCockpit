@@ -37,3 +37,6 @@ TimeshiftCockpit is a plugin for Open Enigma2 receivers that provides advanced t
 
 ## Installation
 - https://OpenCockpit.github.io/TimeshiftCockpit
+
+## Wiki
+- https://github.com/OpenCockpit/TimeshiftCockpit/wiki
