@@ -43,6 +43,7 @@ config.plugins.timeshiftcockpit.fixed2 = ConfigSelection(
     default="", choices=getChannelChoices(service_types_tv))
 logger.debug(
     "fixed2: %s", config.plugins.timeshiftcockpit.fixed2.value)
+# the timeshift recordings go to the first recording folder (a bookmark of MovieCockpit: they are in its list)
 config.plugins.timeshiftcockpit.videodir = ConfigSelection(
-    default=config.usage.timeshift_path.value, choices=[config.usage.timeshift_path.value])
+    default=config.movielist.videodirs.value[0], choices=config.movielist.videodirs.value)
 config.plugins.timeshiftcockpit.enable_stream = ConfigYesNo(default=True)

@@ -99,8 +99,13 @@ class TSRecordingTaskExecution(Shell):
 
     def execShellCallback(self, _path, target_path, error):
         logger.info("...")
-        ParserMetaFile(target_path).updateMeta(
-            {"size": os.path.getsize(self.target_path)})
+        # The recording file is not there when it could not be created (disk full) or when the job is aborted before the
+        # copy has started: the job must be finished all the same.
+        if os.path.isfile(self.target_path):
+            ParserMetaFile(target_path).updateMeta(
+                {"size": os.path.getsize(self.target_path)})
+        else:
+            logger.warning("recording file does not exist: %s", self.target_path)
         logger.debug("progress: %s", self.progress)
         self.execTSRecordingCallback(error)
 

@@ -55,7 +55,6 @@
 	</colors>
 	<fonts>
 		<font filename="nmsbd.ttf" name="FdLcD" scale="100"/>
-		<font filename="OpenSans-Regular.ttf" name="FdLcDLight" scale="100"/>
 	</fonts>
 	<screen backgroundColor="md_transparent" flags="wfNoBorder" name="TimeshiftOverview" position="fill" resolution="1920,1080">
 		<eLabel backgroundColor="md_surface_container_high" cornerRadius="16" position="370,111" size="1180,838" zPosition="-11"/>

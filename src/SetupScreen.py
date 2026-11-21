@@ -16,7 +16,6 @@ from .ChannelSelection import ChannelSelection
 class SetupScreen(Setup, ChannelSelection):
 
     def __init__(self, session):
-        config.plugins.timeshiftcockpit.videodir.value = config.usage.timeshift_path.value
         Setup.__init__(self, session, setup="timeshiftcockpit", plugin="Extensions/TimeshiftCockpit", PluginLanguageDomain=PLUGIN)
         ChannelSelection.__init__(self, session)
         self.setTitle(PLUGIN + " - " + _("Setup"))
