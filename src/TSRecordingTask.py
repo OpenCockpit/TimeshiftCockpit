@@ -11,7 +11,7 @@ except Exception:
     FileManager = None
 from .Debug import logger
 from .TSRecordingTaskExecution import TSRecordingTaskExecution
-from .TSRecordLed import startTSRecordingLed, stopTSRecordingLed
+from .RecordingLed import startRecordingLed, stopRecordingLed
 from .RecordingUtils import calcRecordingFilename
 from .TimeshiftUtils import ERROR_NONE, ERROR
 from .__init__ import _
@@ -68,7 +68,7 @@ class TSRecordingTask(Task, TSRecordingTaskExecution):
 
         self.callback = callback
         if os.path.exists(self.timeshift_file_path):
-            startTSRecordingLed(self.infobar_instance.session, self)   # the front panel led blinks like for a recording
+            startRecordingLed(self, self.infobar_instance.session)   # the front panel led blinks like for a recording
             self.execTSRecording()
         else:
             logger.error("timeshift file %s does not exist",
@@ -83,7 +83,7 @@ class TSRecordingTask(Task, TSRecordingTaskExecution):
 
     def afterRun(self):
         logger.info("service_str: %s", self.service_str)
-        stopTSRecordingLed(self.infobar_instance.session, self)
+        stopRecordingLed(self, self.infobar_instance.session)
         DelayTimer(50, self.completeTask, self.error,
                    self.service_str, self.target_path)
 
