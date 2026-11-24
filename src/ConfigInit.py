@@ -27,6 +27,23 @@ def getChannelChoices(bouquet):
     return choices
 
 
+def _initialChoices(name):
+    # Only "Inactive" plus the saved channel (if any), so that the saved value survives the load of the setting. The
+    # full list of channels is built by populateChannelChoices() at session start, not while the plugin is imported.
+    saved = config.plugins.timeshiftcockpit.content.stored_values.get(name)
+    choices = [("", _("Inactive"))]
+    if saved:
+        choices.append((saved, saved))
+    return choices
+
+
+def populateChannelChoices():
+    """Replace the placeholder choices of the fixed channels by the list of all TV channels (see _initialChoices)."""
+    logger.info("...")
+    for cfg in (config.plugins.timeshiftcockpit.fixed1, config.plugins.timeshiftcockpit.fixed2):
+        cfg.setChoices(getChannelChoices(service_types_tv), default="")
+
+
 logger.debug("...")
 if not hasattr(config.plugins, "timeshiftcockpit"):
     config.plugins.timeshiftcockpit = ConfigSubsection()
@@ -36,11 +53,11 @@ config.plugins.timeshiftcockpit.cover_source = ConfigSelection(
 config.plugins.timeshiftcockpit.enabled = ConfigYesNo(default=True)
 config.plugins.timeshiftcockpit.permanent = ConfigYesNo(default=False)
 config.plugins.timeshiftcockpit.fixed1 = ConfigSelection(
-    default="", choices=getChannelChoices(service_types_tv))
+    default="", choices=_initialChoices("fixed1"))
 logger.debug(
     "fixed1: %s", config.plugins.timeshiftcockpit.fixed1.value)
 config.plugins.timeshiftcockpit.fixed2 = ConfigSelection(
-    default="", choices=getChannelChoices(service_types_tv))
+    default="", choices=_initialChoices("fixed2"))
 logger.debug(
     "fixed2: %s", config.plugins.timeshiftcockpit.fixed2.value)
 # the timeshift recordings go to the first recording folder (a bookmark of MovieCockpit: they are in its list)

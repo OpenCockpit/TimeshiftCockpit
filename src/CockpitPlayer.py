@@ -56,6 +56,7 @@ class CockpitPlayer(
         self.service = service
         self.config_plugins_plugin = config_plugins_plugin
         self.timeshift_start_time = timeshift_start_time
+        self.paused_at = int(time())    # the player is opened by the pause key: this is the point the permanent timeshift stays at
         self.infobar_instance = infobar_instance
         self.service_ref = service_ref
 
@@ -314,7 +315,9 @@ class CockpitPlayer(
         # which the permanent timeshift goes to the point that is live
         if self.skip_to_live:
             self.skip_to_live = False
-            self.doSkip(int(time()) - self.timeshift_start_time)
+            # the moment the pause was pressed, not now: the program info of a young file can take seconds (the PMT
+            # that the demux missed at the start of the file is only repeated when the stream goes on, once per segment)
+            self.doSkip(self.paused_at - self.timeshift_start_time)
 
     def showMovieInfo(self):
         # self.event is only ever refreshed as a side effect of

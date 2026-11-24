@@ -9,7 +9,7 @@ import Screens.InfoBar
 from .__init__ import _
 from .Debug import logger
 from .Version import VERSION
-from . import ConfigInit  # noqa: F401, pylint: disable=unused-import
+from .ConfigInit import populateChannelChoices
 from .InfoBar import InfoBar
 from .SetupScreen import SetupScreen
 from .FileUtils import deleteFiles
@@ -43,6 +43,11 @@ def autoStart(reason, **__):
             config.usage.timeshift_path.value, "*Timeshift*"))
 
 
+def sessionStart(reason, session, **__):  # pylint: disable=unused-argument
+    # the list of channels for the fixed channels is built here, not while the plugin is imported (see ConfigInit)
+    populateChannelChoices()
+
+
 def Plugins(**__):
     descriptors = [
         PluginDescriptor(
@@ -50,6 +55,12 @@ def Plugins(**__):
                 PluginDescriptor.WHERE_AUTOSTART
             ],
             fnc=autoStart
+        ),
+        PluginDescriptor(
+            where=[
+                PluginDescriptor.WHERE_SESSIONSTART
+            ],
+            fnc=sessionStart
         ),
         PluginDescriptor(
             name="TimeshiftCockpit" + " - " + _("Setup"),
